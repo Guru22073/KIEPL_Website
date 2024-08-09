@@ -1,0 +1,262 @@
+body {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, #0a0d14, transparent, transparent),
+      url(header.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+  
+  header {
+    color: white;
+    padding-left: 50px;
+    box-shadow: 5px 0px 15px 0px rgba(190, 190, 190, 0.2);
+    backdrop-filter: blur(2px);
+  }
+  
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    color: white;
+    backdrop-filter: blur(2px);
+    box-shadow: 0px 5px 15px 0px rgba(190, 190, 190, 0.2);
+    height: 97.5%;
+    padding-top: 8%;
+  }
+  
+  footer {
+    color: white;
+    box-shadow: 5px 0px 15px 0px rgba(190, 190, 190, 0.2);
+    text-align: center;
+  }
+  
+  main {
+    display: flex;
+    padding: 20px 20px;
+    flex: 1;
+    overflow-y: auto;
+    justify-content: center;
+  }
+  
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 250px 1fr 1fr;
+    grid-template-rows: 70px 1fr 30px;
+    grid-template-areas:
+      "nav header header"
+      "nav main main"
+      "nav footer footer";
+  }
+  
+  header {
+    grid-area: header;
+  }
+  nav {
+    grid-area: nav;
+  }
+  main {
+    grid-area: main;
+  }
+  footer {
+    grid-area: footer;
+  }
+  
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  ul li {
+    list-style: none;
+    font-size: 14px;
+  }
+  
+  ul .heading {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  
+  ul button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px 5px rgba(190, 190, 190, 0.331);
+  }
+  
+  ul button:hover {
+    box-shadow: 0px 0px 10px 3px rgba(190, 190, 190, 0.2);
+  }
+  
+  ul li a:hover {
+    color: #ff7200;
+  }
+  
+  nav ul .logout {
+    margin-top: auto;
+    margin-bottom: 20px;
+  }
+  
+  .submissions {
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+  }
+  
+  .submissions h1 {
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  .submission-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: all ease 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+  }
+  
+  .submission-card:hover {
+    transform: scale(1.01);
+  }
+  
+  .submission-image {
+    flex-shrink: 0;
+    margin-right: 15px;
+  }
+  
+  .submission-image img {
+    height: 80px;
+    width: 80px;
+    border-radius: 20%;
+  }
+  
+  .submission-details {
+    flex-grow: 1;
+    padding-right: 15px;
+  }
+  
+  .submission-details h3 {
+    margin: 0;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: white;
+  }
+  
+  .submission-details span {
+    margin: 0;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .submission-meta {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .submission-meta button {
+    padding: 15px 20px;
+    border: 1px solid white;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .submission-meta button:hover {
+    background-color: #ff7200;
+  }
+  
+  .view-resume {
+    border-color: #0a84ff;
+    color: #0a84ff;
+  }
+  
+  .view-resume:hover {
+    background-color: #0a84ff;
+    color: white;
+  }
+  
+  .approve {
+    border-color: #28a745;
+    color: #28a745;
+  }
+  
+  .approve:hover {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .reject {
+    border-color: #dc3545;
+    color: #dc3545;
+  }
+  
+  .reject:hover {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    main {
+      padding-top: 150px;
+    }
+  
+    .submissions {
+      padding: 10px;
+    }
+  
+    .submission-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .submission-meta {
+      margin-top: 10px;
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .submission-meta button {
+      flex: 1;
+    }
+  }

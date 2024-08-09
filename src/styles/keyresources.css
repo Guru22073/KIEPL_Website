@@ -1,0 +1,55 @@
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #100f1fec;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #19172ec3;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(180, 176, 176, 0.282);
+    border-radius: 10px;
+  }
+  
+  h1,
+  h2 {
+    text-align: center;
+    color: #fff;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  thead {
+    background-color: #0d6ccada;
+    color: #fff;
+  }
+  
+  thead th {
+    padding: 20px 10px;
+    text-align: left;
+  }
+  
+  tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  tbody tr:nth-child(odd) {
+    color: white;
+  }
+  tbody tr:nth-child(even) {
+    background: #e2e1efda;
+  }
+  
+  tbody tr:hover {
+    background-color: #f1f1f1;
+    color: black;
+  }

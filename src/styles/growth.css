@@ -1,0 +1,301 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-buttons button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  background-color: #2196f3;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-buttons button:hover {
+  background-color: #1976d2;
+}
+
+.dashboard {
+  width: 90%;
+  max-width: 1200px;
+  margin: 80px auto 20px;
+  padding: 20px;
+  background-color: #373737;
+  box-shadow: 0 0 20px rgba(77, 77, 77, 0.511);
+  border-radius: 8px;
+  border: 1px solid rgb(91, 91, 91);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  background-color: #555;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat {
+  text-align: center;
+  color: #fff;
+  margin: 10px;
+  flex: 1 1 200px;
+  max-width: 250px;
+}
+
+.stat .icon {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.stat .number {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.stat .label {
+  font-size: 1em;
+  color: #ccc;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.chart-container,
+.task-list-container {
+  background-color: #444;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.chart-container {
+  flex: 1 1 40%;
+  text-align: center;
+  color: #fff;
+  min-width: 300px;
+}
+
+.chart-container h1 {
+  color: white;
+}
+
+.task-list-container {
+  flex: 1 1 58%;
+  color: #eee;
+  max-height: 560px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  min-width: 290px;
+  margin-left: 10px;
+}
+
+.task-list-container h1 {
+  color: white;
+}
+
+#projectStatusChart {
+  max-width: 100%;
+  max-height: 400px;
+  margin: auto;
+}
+
+.status-labels {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.status-label {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.arrow {
+  margin-left: 5px;
+  font-size: 1.2em;
+}
+
+.task-list h1 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+}
+
+.summary {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #aaa;
+}
+
+.task {
+  margin-bottom: 20px;
+}
+
+.task-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #555;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.task-name {
+  font-weight: bold;
+}
+
+.due-date,
+.status,
+.assigned,
+.time-spent {
+  font-size: 14px;
+}
+
+.status {
+  align-self: flex-start;
+  border-radius: 5px;
+  padding: 5px;
+  color: #333;
+}
+
+.status.in-progress {
+  background-color: #ffa500;
+}
+
+.status.disabled {
+  background-color: #ff6347;
+}
+
+.status.completed {
+  background-color: #32cd32;
+}
+
+@media (min-width: 600px) {
+  .task-details {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .task-name {
+    flex: 2;
+  }
+
+  .due-date,
+  .status,
+  .assigned,
+  .time-spent {
+    flex: 1;
+    text-align: right;
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .chart-container,
+  .task-list-container {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+
+  .task-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-name,
+  .due-date,
+  .status,
+  .assigned,
+  .time-spent {
+    text-align: left;
+  }
+}
+
+#tasksOverviewChart {
+  max-width: 800px;
+  max-height: 400px;
+  margin: auto;
+}
+
+.filter-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-buttons button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.filter-buttons button:hover {
+  background-color: #777;
+}

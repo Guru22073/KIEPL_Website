@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Finder</title>
+    <link rel="stylesheet" href="styles/job.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="logo.jpg" />
+          <div class="logo-text">
+            <h1>Job Finder</h1>
+            <p>Get your dream job</p>
+          </div>
+        </div>
+
+        <div class="auth-buttons">
+          <a href="signup.html" class="button-reg">
+            <button id="Register">Register</button>
+          </a>
+          <a href="index.html" class="button-log">
+            <button id="login">Login</button>
+          </a>
+          <div onclick="showSidebar()" class="hideMenuButton">
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="26px"
+                viewBox="0 -960 960 960"
+                width="26px"
+                fill="#ffff"
+              >
+                <path
+                  d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div class="side-bar">
+            <div class="menu">
+              <div onclick="offSidebar()" class="item">
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="26px"
+                    viewBox="0 -960 960 960"
+                    width="26px"
+                    fill="#ffffff"
+                  >
+                    <path
+                      d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+
+              <h2>Filter Jobs</h2>
+              <div class="filter-group">
+                <label for="location">Job Location</label>
+                <select id="location">
+                  <option value="all">All</option>
+                  <option value="United States">United States</option>
+                  <option value="India">India</option>
+                  <option value="Japan">Japan</option>
+                  <option value="Japan">England</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="job-type">Job Type</label>
+                <select id="job-type">
+                  <option value="all">All</option>
+                  <option value="Full Time">Full Time</option>
+                  <option value="Part Time">Part Time</option>
+                  <option value="Remote">Remote</option>
+                  <option value="Freelance">Freelance</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="posted-within">Posted Within</label>
+                <select id="posted-within">
+                  <option value="Any">Any</option>
+                  <option value="Today">Today</option>
+                  <option value="Last 2 days">Last 2 days</option>
+                  <option value="Last 3 days">Last 3 days</option>
+                  <option value="Last 5 days">Last 5 days</option>
+                  <option value="Last 10 days">Last 10 days</option>
+                </select>
+              </div>
+              <div class="filter-buttons">
+                <button id="filter">Filter</button>
+                <button id="reset">Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <aside class="filter-jobs">
+        <h2>Filter Jobs</h2>
+        <div class="filter-group">
+          <label for="location">Job Location</label>
+          <select id="location">
+            <option value="all">All</option>
+            <option value="United States">United States</option>
+            <option value="India">India</option>
+            <option value="Japan">Japan</option>
+            <option value="Japan">England</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="job-type">Job Type</label>
+          <select id="job-type">
+            <option value="all">All</option>
+            <option value="Full Time">Full Time</option>
+            <option value="Part Time">Part Time</option>
+            <option value="Remote">Remote</option>
+            <option value="Freelance">Freelance</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="posted-within">Posted Within</label>
+          <select id="posted-within">
+            <option value="Any">Any</option>
+            <option value="Today">Today</option>
+            <option value="Last 2 days">Last 2 days</option>
+            <option value="Last 3 days">Last 3 days</option>
+            <option value="Last 5 days">Last 5 days</option>
+            <option value="Last 10 days">Last 10 days</option>
+          </select>
+        </div>
+        <div class="filter-buttons">
+          <button id="filter">Filter</button>
+          <button id="reset">Reset</button>
+        </div>
+      </aside>
+
+      <section class="job-listings">
+        <h2>Total <span id="job-count">10</span> jobs found</h2>
+        <div
+          class="job-card"
+          data-location="India"
+          data-type="Freelance"
+          data-date="1"
+        >
+          <div class="job-details">
+            <img src="logo.jpg" alt="Job Image" />
+            <h3>Web Developer</h3>
+            <span>Test company</span>
+            <span>India</span>
+            <span>15000 / month</span>
+          </div>
+          <div class="job-meta">
+            <p class="job-type">Freelance</p>
+            <p class="job-date">1 days ago</p>
+            <a href="apply.html">
+              <button>Apply</button>
+            </a>
+          </div>
+        </div>
+        <div
+          class="job-card"
+          data-location="United States"
+          data-type="Freelance"
+          data-date="10"
+        >
+          <div class="job-details">
+            <img src="logo.jpg" alt="Job Image" />
+            <h3>Web Developer</h3>
+            <span>Test company</span>
+            <span>United States</span>
+            <span>15000 / month</span>
+          </div>
+          <div class="job-meta">
+            <p class="job-type">Freelance</p>
+            <p class="job-date">10 days ago</p>
+            <a href="apply.html">
+              <button>Apply</button>
+            </a>
+          </div>
+        </div>
+        <div
+          class="job-card"
+          data-location="England"
+          data-type="Freelance"
+          data-date="3"
+        >
+          <div class="job-details">
+            <img src="logo.jpg" alt="Job Image" />
+            <h3>Web Developer</h3>
+            <span>Test company</span>
+            <span>England</span>
+            <span>15000 / month</span>
+          </div>
+          <div class="job-meta">
+            <p class="job-type">Freelance</p>
+            <p class="job-date">3 days ago</p>
+            <a href="apply.html">
+              <button>Apply</button>
+            </a>
+          </div>
+        </div>
+        <div
+          class="job-card"
+          data-location="Japan"
+          data-type="Remote"
+          data-date="7"
+        >
+          <div class="job-details">
+            <img src="logo.jpg" alt="Job Image" />
+            <h3>Web Developer</h3>
+            <span>Test company</span>
+            <span>Japan</span>
+            <span>15000 / month</span>
+          </div>
+          <div class="job-meta">
+            <p class="job-type">Remote</p>
+            <p class="job-date">7 days ago</p>
+            <a href="apply.html">
+              <button>Apply</button>
+            </a>
+          </div>
+        </div>
+        <div
+          class="job-card"
+          data-location="United States"
+          data-type="Freelance"
+          data-date="15"
+        >
+          <div class="job-details">
+            <img src="logo.jpg" alt="Job Image" />
+            <h3>Web Developer</h3>
+            <span>Test company</span>
+            <span>Russia</span>
+            <span>15000 / month</span>
+          </div>
+          <div class="job-meta">
+            <p class="job-type">Part Time</p>
+            <p class="job-date">15 days ago</p>
+            <a href="apply.html">
+              <button>Apply</button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const locationSelect = document.getElementById("location");
+        const jobTypeSelect = document.getElementById("job-type");
+        const postedWithinSelect = document.getElementById("posted-within");
+        const jobCards = document.querySelectorAll(".job-card");
+        const jobCount = document.getElementById("job-count");
+        const filterButton = document.getElementById("filter");
+        const resetButton = document.getElementById("reset");
+
+        function filterJobs() {
+          const location = locationSelect.value;
+          const jobType = jobTypeSelect.value;
+          const postedWithin = postedWithinSelect.value;
+
+          let count = 0;
+
+          jobCards.forEach((card) => {
+            const cardLocation = card.getAttribute("data-location");
+            const cardJobType = card.getAttribute("data-type");
+            const cardDate = parseInt(card.getAttribute("data-date"), 10);
+
+            let locationMatch = location === "all" || location === cardLocation;
+            let jobTypeMatch = jobType === "all" || jobType === cardJobType;
+
+            let postedWithinMatch = false;
+            switch (postedWithin) {
+              case "Any":
+                postedWithinMatch = true;
+                break;
+              case "Today":
+                postedWithinMatch = cardDate <= 1;
+                break;
+              case "Last 2 days":
+                postedWithinMatch = cardDate <= 2;
+                break;
+              case "Last 3 days":
+                postedWithinMatch = cardDate <= 3;
+                break;
+              case "Last 5 days":
+                postedWithinMatch = cardDate <= 5;
+                break;
+              case "Last 10 days":
+                postedWithinMatch = cardDate <= 10;
+                break;
+              default:
+                break;
+            }
+
+            console.log(
+              `Location: ${location}, Card Location: ${cardLocation}, Location Match: ${locationMatch}`
+            );
+            console.log(
+              `Job Type: ${jobType}, Card Job Type: ${cardJobType}, Job Type Match: ${jobTypeMatch}`
+            );
+            console.log(
+              `Posted Within: ${postedWithin}, Card Date: ${cardDate}, Posted Within Match: ${postedWithinMatch}`
+            );
+
+            if (locationMatch && jobTypeMatch && postedWithinMatch) {
+              card.style.display = "flex";
+              count++;
+            } else {
+              card.style.display = "none";
+            }
+          });
+
+          jobCount.textContent = count;
+        }
+
+        function resetFilters() {
+          locationSelect.value = "all";
+          jobTypeSelect.value = "all";
+          postedWithinSelect.value = "Any";
+          filterJobs();
+        }
+
+        filterButton.addEventListener("click", filterJobs);
+        resetButton.addEventListener("click", resetFilters);
+
+        filterJobs();
+      });
+
+      function showSidebar() {
+        const sidebar = document.querySelector(".side-bar");
+        sidebar.style.display = "flex";
+      }
+
+      function offSidebar() {
+        const sidebar = document.querySelector(".side-bar");
+        sidebar.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

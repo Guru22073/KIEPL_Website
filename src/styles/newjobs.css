@@ -1,0 +1,276 @@
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+      to top,
+      #0a0d14,
+      transparent,
+      transparent,
+      #0a0d14
+    ),
+    url(header.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+header {
+  color: white;
+  padding-left: 50px;
+  box-shadow: 5px 0px 15px 0px rgba(190, 190, 190, 0.2);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  color: white;
+  backdrop-filter: blur(2px);
+  box-shadow: 0px 5px 15px 0px rgba(190, 190, 190, 0.2);
+  height: 97.5%;
+  padding-top: 8%;
+}
+
+footer {
+  color: white;
+  box-shadow: 5px 0px 15px 0px rgba(190, 190, 190, 0.2);
+  text-align: center;
+}
+
+main {
+  color: white;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 250px 1fr 1fr;
+  grid-template-rows: 70px 1fr 30px;
+  grid-template-areas:
+    "nav header header"
+    "nav main main"
+    "nav footer footer";
+}
+
+header {
+  grid-area: header;
+}
+nav {
+  grid-area: nav;
+}
+main {
+  grid-area: main;
+  overflow: auto;
+}
+footer {
+  grid-area: footer;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+ul li {
+  list-style: none;
+  font-size: 14px;
+}
+
+ul .heading {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Arial;
+  font-weight: bold;
+}
+
+ul button {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 25px 5px rgba(190, 190, 190, 0.331);
+}
+
+ul button:hover {
+  box-shadow: 0px 0px 10px 3px rgba(190, 190, 190, 0.2);
+}
+
+ul li a:hover {
+  color: #ff7200;
+}
+
+nav ul .logout {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 300px;
+  background-color: rgba(69, 66, 66, 0.426);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 99999;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 30px;
+}
+
+.sidebar li {
+  text-align: center;
+  width: 100%;
+}
+
+.sidebar a {
+  width: 100%;
+}
+
+.job-form {
+  background-color: rgba(0, 0, 0, 0.689);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(232, 232, 232, 0.1);
+  max-width: 70%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.job-form h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: white;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(128, 128, 128, 0.413);
+  box-sizing: border-box;
+  font-size: 14px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.192);
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.form-group option {
+  color: black;
+}
+
+button[type="submit"] {
+  background-color: #6200ea;
+  color: #fff;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #3700b3;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 0) and (max-width: 700px) {
+  .aside {
+    display: none;
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+  }
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 250px 1fr 1fr;
+    grid-template-rows: 0px 1fr 30px;
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "footer footer footer";
+  }
+
+  main {
+    margin-top: 50px;
+  }
+
+  .sidebar {
+    z-index: 9999999;
+  }
+}
+
+@media (min-width: 700px) {
+  .hideMenuButton {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar {
+    width: 100%;
+  }
+}

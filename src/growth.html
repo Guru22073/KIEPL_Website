@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles/growth.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="logo.jpg" alt="Job Finder Logo" />
+          <div class="logo-text">Project Status</div>
+        </div>
+      </nav>
+    </header>
+    <main class="dashboard">
+      <section class="stats-container">
+        <div class="stat">
+          <div class="icon">&#128187;</div>
+          <div class="number">29</div>
+          <div class="label">Total Projects</div>
+        </div>
+        <div class="stat">
+          <div class="icon">&#128203;</div>
+          <div class="number">715</div>
+          <div class="label">Total Tasks</div>
+        </div>
+        <div class="stat">
+          <div class="icon">&#128101;</div>
+          <div class="number">31</div>
+          <div class="label">Members</div>
+        </div>
+        <div class="stat">
+          <div class="icon">&#128200;</div>
+          <div class="number">93%</div>
+          <div class="label">Productivity</div>
+        </div>
+      </section>
+
+      <section class="row">
+        <div class="chart-container">
+          <h1>PROJECT STATUS</h1>
+          <canvas id="projectStatusChart" width="400" height="400"></canvas>
+          <div class="status-labels">
+            <div class="status-label">
+              <span class="color-box" style="background-color: #4caf50"></span>
+              <span>64% Completed</span>
+              <span class="arrow" style="color: #4caf50">&#9650;</span>
+            </div>
+            <div class="status-label">
+              <span class="color-box" style="background-color: #2196f3"></span>
+              <span>26% In-progress</span>
+              <span class="arrow" style="color: #2196f3">&#9660;</span>
+            </div>
+            <div class="status-label">
+              <span class="color-box" style="background-color: #f44336"></span>
+              <span>10% Behind</span>
+              <span class="arrow" style="color: #f44336">&#9660;</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="task-list-container">
+          <h1>TASKS</h1>
+          <div class="summary">107 Tasks completed out of 195</div>
+          <div class="task">
+            <div class="task-details">
+              <div class="task-name">Coffee detail page - Main Page</div>
+              <div class="due-date">Due in 3 days</div>
+              <div class="status in-progress">In-progress</div>
+              <div class="assigned">Assigned to Logan R. Cohn</div>
+              <div class="time-spent">3h 20min</div>
+            </div>
+          </div>
+          <div class="task">
+            <div class="task-details">
+              <div class="task-name">Drinking bottle graphics</div>
+              <div class="due-date">Due in 27 days</div>
+              <div class="status disabled">Disabled</div>
+              <div class="assigned">Assigned to Jerry F. Powell</div>
+              <div class="time-spent">12h 21min</div>
+            </div>
+          </div>
+          <div class="task">
+            <div class="task-details">
+              <div class="task-name">App design and development</div>
+              <div class="due-date">Due in 7 days</div>
+              <div class="status completed">Completed</div>
+              <div class="assigned">Assigned to Scot M. Smith</div>
+              <div class="time-spent">78h 05min</div>
+            </div>
+          </div>
+          <div class="task">
+            <div class="task-details">
+              <div class="task-name">Poster illustration design</div>
+              <div class="due-date">Due in 5 days</div>
+              <div class="status in-progress">In-progress</div>
+              <div class="assigned">Assigned to John P. Ritter</div>
+              <div class="time-spent">26h 58min</div>
+            </div>
+          </div>
+          <div class="task">
+            <div class="task-details">
+              <div class="task-name">Poster illustration design</div>
+              <div class="due-date">Due in 5 days</div>
+              <div class="status in-progress">In-progress</div>
+              <div class="assigned">Assigned to John P. Ritter</div>
+              <div class="time-spent">26h 58min</div>
+            </div>
+          </div>
+          <div class="task">
+            <div class="task-details">
+              <div class="task-name">Poster illustration design</div>
+              <div class="due-date">Due in 5 days</div>
+              <div class="status in-progress">In-progress</div>
+              <div class="assigned">Assigned to John P. Ritter</div>
+              <div class="time-spent">26h 58min</div>
+            </div>
+          </div>
+          <div class="task">
+            <div class="task-details">
+              <div class="task-name">Poster illustration design</div>
+              <div class="due-date">Due in 5 days</div>
+              <div class="status in-progress">In-progress</div>
+              <div class="assigned">Assigned to John P. Ritter</div>
+              <div class="time-spent">26h 58min</div>
+            </div>
+          </div>
+          <div class="task">
+            <div class="task-details">
+              <div class="task-name">Poster illustration design</div>
+              <div class="due-date">Due in 5 days</div>
+              <div class="status in-progress">In-progress</div>
+              <div class="assigned">Assigned to John P. Ritter</div>
+              <div class="time-spent">26h 58min</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chart-container">
+        <h1>TASKS OVERVIEW</h1>
+        <canvas id="tasksOverviewChart" width="800" height="400"></canvas>
+        <div class="filter-buttons">
+          <button onclick="filterData('all')">ALL</button>
+          <button onclick="filterData('1M')">1M</button>
+          <button onclick="filterData('6M')">6M</button>
+          <button onclick="filterData('1Y')">1Y</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      //! Status Chart
+      const projectStatusCtx = document
+        .getElementById("projectStatusChart")
+        .getContext("2d");
+      const projectStatusChart = new Chart(projectStatusCtx, {
+        type: "doughnut",
+        data: {
+          datasets: [
+            {
+              data: [64, 26, 10],
+              backgroundColor: ["#4CAF50", "#2196F3", "#F44336"],
+              hoverBackgroundColor: ["#66BB6A", "#42A5F5", "#EF5350"],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  let label = context.label || "";
+                  if (label) {
+                    label += ": ";
+                  }
+                  if (context.parsed !== null) {
+                    label += context.parsed + "%";
+                  }
+                  return label;
+                },
+              },
+            },
+          },
+          cutout: "80%",
+        },
+      });
+
+      //!! Tasks Overview Chart
+      const tasksOverviewCtx = document
+        .getElementById("tasksOverviewChart")
+        .getContext("2d");
+      const data = {
+        all: [
+          5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 50, 40, 30, 20, 10, 5,
+          15, 25, 35, 45, 55, 65,
+        ],
+        "1M": [5, 10, 15, 20, 25],
+        "6M": [5, 10, 15, 20, 25, 30, 35, 40],
+        "1Y": [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60],
+      };
+      const labels = {
+        all: [
+          "Sprint 1",
+          "Sprint 2",
+          "Sprint 3",
+          "Sprint 4",
+          "Sprint 5",
+          "Sprint 6",
+          "Sprint 7",
+          "Sprint 8",
+          "Sprint 9",
+          "Sprint 10",
+          "Sprint 11",
+          "Sprint 12",
+          "Sprint 13",
+          "Sprint 14",
+          "Sprint 15",
+          "Sprint 16",
+          "Sprint 17",
+          "Sprint 18",
+          "Sprint 19",
+          "Sprint 20",
+          "Sprint 21",
+          "Sprint 22",
+          "Sprint 23",
+          "Sprint 24",
+        ],
+        "1M": ["Sprint 1", "Sprint 2", "Sprint 3", "Sprint 4", "Sprint 5"],
+        "6M": [
+          "Sprint 1",
+          "Sprint 2",
+          "Sprint 3",
+          "Sprint 4",
+          "Sprint 5",
+          "Sprint 6",
+          "Sprint 7",
+          "Sprint 8",
+        ],
+        "1Y": [
+          "Sprint 1",
+          "Sprint 2",
+          "Sprint 3",
+          "Sprint 4",
+          "Sprint 5",
+          "Sprint 6",
+          "Sprint 7",
+          "Sprint 8",
+          "Sprint 9",
+          "Sprint 10",
+          "Sprint 11",
+          "Sprint 12",
+        ],
+      };
+      const tasksOverviewChart = new Chart(tasksOverviewCtx, {
+        type: "bar",
+        data: {
+          labels: labels.all,
+          datasets: [
+            {
+              label: "Tasks",
+              data: data.all,
+              backgroundColor: "rgba(33, 150, 243, 0.8)",
+              borderColor: "rgba(33, 150, 243, 1)",
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            x: { beginAtZero: true, grid: { display: false, color: "#444" } },
+            y: { beginAtZero: true, grid: { color: "#444" } },
+          },
+          plugins: { legend: { display: false } },
+        },
+      });
+
+      function filterData(filter) {
+        tasksOverviewChart.data.labels = labels[filter];
+        tasksOverviewChart.data.datasets[0].data = data[filter];
+        tasksOverviewChart.update();
+      }
+    </script>
+  </body>
+</html>

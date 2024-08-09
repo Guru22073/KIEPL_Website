@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.5) 50%
+    ),
+    url(Banner2.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 9rem;
+  padding: 0.9rem;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  padding-left: 0;
+}
+
+.menu ul li {
+  margin: 0 20px;
+  position: relative;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+
+.menu ul li a:hover {
+  color: #ff7200;
+}
+
+.contact-icon-container .tooltip {
+  position: absolute;
+  background-color: gray;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-size: 12px;
+  opacity: 0;
+  right: -25px;
+  top: 30px;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.contact-icon-container:hover .tooltip {
+  opacity: 1;
+}
+
+.signup-content {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 100px;
+  text-align: center;
+  color: #fff;
+}
+
+.form-container h2 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.form-container input,
+.form-container select {
+  width: 90%;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ff7200;
+  color: #fff;
+  font-size: 16px;
+}
+
+.form-container input::placeholder {
+  color: #fff;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  outline: none;
+  border-color: #ff7200;
+}
+
+.btnn {
+  width: 90%;
+  padding: 10px;
+  background: #ff7200;
+  border: none;
+  color: #000;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  margin-top: 10px;
+}
+
+.btnn:hover {
+  background: #fff;
+}
+
+.btnn a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.form-container .link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.form-container .link a {
+  text-decoration: none;
+  color: #ff7200;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding-left: 0;
+  }
+  .menu {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .signup-content {
+    margin-top: 200px;
+    padding: 20px;
+  }
+
+  .form-container h2 {
+    font-size: 20px;
+  }
+
+  .form-container input {
+    padding: 8px;
+  }
+
+  .btnn {
+    font-size: 14px;
+  }
+}

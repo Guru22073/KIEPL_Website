@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles/admindashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div onclick="showSidebar()" class="hideMenuButton">
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="26px"
+              viewBox="0 -960 960 960"
+              width="26px"
+              fill="#ffff"
+            >
+              <path
+                d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+              />
+            </svg>
+          </a>
+        </div>
+        <h3>Header Content</h3>
+        <ul class="sidebar">
+          <li onclick="offSidebar()">
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="26px"
+                viewBox="0 -960 960 960"
+                width="26px"
+                fill="#ffffff"
+              >
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="heading">
+            <a href="admindashboard.html">Admin Dashboard</a>
+          </li>
+          <li><a href="admindashboard.html">Dashboard</a></li>
+          <li><a href="newjobs.html">New Jobs</a></li>
+          <li><a href="joblist.html">Job List</a></li>
+          <li><a href="submission.html">Submission</a></li>
+          <li class="logout">
+            <a href="#"><button>Log out</button></a>
+          </li>
+        </ul>
+      </header>
+      <nav>
+        <ul class="aside">
+          <li class="heading">
+            <a href="admindashboard.html" class="hideOnMobile"
+              >Admin Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="admindashboard.html" class="hideOnMobile">Dashboard</a>
+          </li>
+          <li><a href="newjobs.html" class="hideOnMobile">New Jobs</a></li>
+          <li><a href="joblist.html" class="hideOnMobile">Job List</a></li>
+          <li><a href="submission.html" class="hideOnMobile">Submission</a></li>
+          <li class="logout">
+            <a href="#"><button>Log out</button></a>
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <h2>Dashboard</h2>
+        <div class="contents">
+          <div>Total Users</div>
+          <div>Total Jobs</div>
+          <div>Applied Jobs</div>
+          <div>Contacted Users</div>
+        </div>
+      </main>
+      <footer>&copy; 2023 KIEPL. All Rights Reserved.</footer>
+    </div>
+    <script>
+      function showSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "flex";
+      }
+
+      function offSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
