@@ -687,7 +687,6 @@ a {
   overflow-x: auto;
   flex-wrap: nowrap;
   scroll-behavior: smooth;
-  background-color: lightblue;
 }
 
 .discover__card {
