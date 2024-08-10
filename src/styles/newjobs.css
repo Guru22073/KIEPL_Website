@@ -10,7 +10,7 @@ body {
       transparent,
       #0a0d14
     ),
-    url(header.jpg);
+    url(images/header.jpg);
   background-position: center;
   background-size: cover;
   height: 100vh;

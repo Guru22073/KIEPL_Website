@@ -20,7 +20,7 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(to top, #0a0d14, transparent, transparent),
-    url("Banner2.jpg") no-repeat center center fixed;
+    url("images/Banner2.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 

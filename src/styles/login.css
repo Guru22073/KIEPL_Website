@@ -16,7 +16,7 @@ body {
       rgba(0, 0, 0, 0.5) 50%,
       rgba(0, 0, 0, 0.5) 50%
     ),
-    url(Banner2.jpg);
+    url(images/Banner2.jpg);
   background-position: center;
   background-size: cover;
   display: flex;
