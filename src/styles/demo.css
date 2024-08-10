@@ -6,7 +6,7 @@
 .main {
   width: 100%;
   background-image: linear-gradient(to top, #0a0d14, transparent, #0a0d14),
-    url(Banner2.jpg);
+    url(images/Banner2.jpg);
   background-position: center;
   background-size: cover;
   height: 100vh;
@@ -589,7 +589,7 @@ ul li a:hover {
 .logo-container h1 {
   font-size: 10vw;
   font-family: Arial, sans-serif;
-  background: url("logo.jpg");
+  background: url("logo/logo.jpg");
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
