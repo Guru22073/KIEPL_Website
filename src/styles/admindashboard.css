@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(to top, #0a0d14, transparent, transparent),
-    url(header.jpg);
+    url(images/header.jpg);
   background-position: center;
   background-size: cover;
   max-width: 100vw;
