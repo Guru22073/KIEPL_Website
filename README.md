@@ -12,8 +12,8 @@ for different features, <img src="https://raw.githubusercontent.com/devicons/dev
 
 ## Screenshots
 
-![Website Screenshot 1](https://raw.githubusercontent.com/Guru22073/KIEPL_Website/src/images/Landing_page.png)
-![Website Screenshot 2](https://raw.githubusercontent.com/Guru22073/KIEPL_Website/src/images/bottom _.png)
+![Website Screenshot 1](src/images/Landing_page.png)
+![Website Screenshot 2](src/images/bottom _.png)
 
 <br>
 
