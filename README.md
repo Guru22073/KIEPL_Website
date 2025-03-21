@@ -12,7 +12,10 @@ for different features, <img src="https://raw.githubusercontent.com/devicons/dev
 
 ## Screenshots
 
+**Landing Page**
 ![Website Screenshot 1](src/images/Landing_page.png)
+
+**Bottom of the Page**
 ![Website Screenshot 2](src/images/bottomSite.png)
 
 <br>
