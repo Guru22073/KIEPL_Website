@@ -10,6 +10,13 @@ for different features, <img src="https://raw.githubusercontent.com/devicons/dev
 
 <br>
 
+## Screenshots
+
+![Website Screenshot 1](https://raw.githubusercontent.com/Guru22073/KIEPL_Website/src/images/Landing_page.png)
+![Website Screenshot 2](https://raw.githubusercontent.com/Guru22073/KIEPL_Website/src/images/bottom _.png)
+
+<br>
+
 ## Used By
 
 This project is used by the following companies:
