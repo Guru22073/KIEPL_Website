@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(46, 46, 46);
+    color: rgb(46, 46, 46);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 70px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.logo-image {
+    height: inherit;
+    width: inherit;
+}
+
+.logo-icon span {
+    color: #ff7200;
+    font-weight: bold;
+}
+
+.logo-text {
+    font-size: 24px;
+}
+
+.logo-text span:first-child {
+    color: #555;
+    font-weight: bold;
+}
+
+.logo-text span:last-child {
+    color: #000;
+    font-weight: bold;
+}
+
+.tagline {
+    margin-left: auto;
+    color: #ff7200;
+    font-style: italic;
+}
+
+.nav {
+    background-color:rgb(46, 46, 46);
+    padding: 0;
+    border-right: 1px solid #c5c5c5;
+    border-left: 1px solid #c5c5c5;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav li {
+    padding: 15px 20px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    border-right: 1px solid #3f3128;
+}
+
+.nav li a {
+    color: #969696;
+    text-decoration: none;
+}
+
+.nav li.active {
+    background-color: #ff8724;
+}
+
+.nav li.active a {
+    color: #fff;
+}
+
+.banner {
+    background-color: #e9e9e9;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+}
+
+.banner-left {
+    display: flex;
+    align-items: center;
+}
+
+.banner-left img {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.banner-title {
+    font-size: 36px;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.banner-bubbles {
+    display: flex;
+}
+
+.bubble {
+    width: 50px;
+    height: 50px;
+    background-color: #ff8724;
+    border-radius: 50%;
+    margin-left: -15px;
+}
+
+.bubble.large {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    z-index: 2;
+}
+
+.bubble.medium {
+    width: 70px;
+    height: 70px;
+    margin-top: -20px;
+    z-index: 1;
+}
+
+.bubble.small {
+    width: 40px;
+    height: 40px;
+    margin-top: 30px;
+}
+
+.content {
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+.team-title {
+    font-size: 22px;
+    color: #555;
+    margin: 20px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #ccc;
+}
+
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.contact-table th {
+    background-color: #e9e9e9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.contact-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    vertical-align: top;
+}
+
+.section-header {
+    background-color: #ecebeb;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+.person-name {
+    font-weight: bold;
+    color: #555;
+}
+
+.person-title {
+    color: #777;
+    margin: 5px 0;
+}
+
+.person-email {
+    margin-top: 5px;
+}
+
+.person-email a {
+    color: #ff7200;
+    text-decoration: none;
+}
+
+.person-email a:hover {
+    text-decoration: underline;
+}
+
+.subsection-header {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #e9e9e9;
+    border-bottom: 1px solid #ddd;
+}
+
+.footer {
+    background-color: rgb(46, 46, 46);
+    color: #c5c5c5;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    border-right: 1px solid #c5c5c5;
+    border-left: 1px solid #c5c5c5;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .tagline {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    .nav ul {
+        flex-wrap: wrap;
+    }
+    
+    .banner {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+    
+    .banner-left {
+        margin-bottom: 20px;
+    }
+}
