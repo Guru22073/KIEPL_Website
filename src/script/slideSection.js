@@ -1,119 +1,86 @@
-
-document.addEventListener("DOMContentLoaded", function() {
-    initCarousel();
-});
-
-function initCarousel() {
+document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.querySelector('.carousel');
     const slides = document.querySelectorAll('.carousel-slide');
     const indicatorsContainer = document.querySelector('.carousel-indicators');
-    const prevBtn = document.querySelector('.carousel-control.prev');
-    const nextBtn = document.querySelector('.carousel-control.next');
-    
-    let currentSlide = 0;
-    let slideInterval;
-    const intervalTime = 4000; 
-    
+    const prevButton = document.querySelector('.carousel-control.prev');
+    const nextButton = document.querySelector('.carousel-control.next');
+    let currentIndex = 0;
+    let autoPlayInterval;
+    let isVideoPlaying = false;
+  
     slides.forEach((_, index) => {
-        const indicator = document.createElement('div');
-        indicator.classList.add('carousel-indicator');
-        if (index === 0) {
-            indicator.classList.add('active');
+      const indicator = document.createElement('div');
+      indicator.classList.add('carousel-indicator');
+      indicator.addEventListener('click', () => goToSlide(index, true));
+      indicatorsContainer.appendChild(indicator);
+    });
+  
+    function updateIndicators() {
+      document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentIndex);
+      });
+    }
+  
+    function goToSlide(index, force = false) {
+      const currentVideo = slides[currentIndex].querySelector('video');
+      
+      if (currentVideo && !currentVideo.paused) {
+        currentVideo.pause();
+        isVideoPlaying = false;
+      }
+      
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (index + slides.length) % slides.length;
+      slides[currentIndex].classList.add('active');
+      updateIndicators();
+  
+      const video = slides[currentIndex].querySelector('video');
+      if (video) {
+        clearInterval(autoPlayInterval);
+        isVideoPlaying = true;
+        video.currentTime = 0;
+        video.play()
+          .then(() => {
+            video.onended = () => {
+              isVideoPlaying = false;
+              startAutoPlay();
+            };
+          })
+          .catch(() => {
+            isVideoPlaying = false;
+            startAutoPlay();
+          });
+      } else {
+        isVideoPlaying = false;
+        startAutoPlay();
+      }
+    }
+  
+    function startAutoPlay() {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = setInterval(() => {
+        if (!isVideoPlaying) goToSlide(currentIndex + 1);
+      }, 5000);
+    }
+  
+    prevButton.addEventListener('click', () => {
+      goToSlide(currentIndex - 1, true);
+    });
+  
+    nextButton.addEventListener('click', () => {
+      goToSlide(currentIndex + 1, true);
+    });
+  
+    updateIndicators();
+    startAutoPlay();
+    const initialVideo = slides[0].querySelector('video');
+    if (initialVideo) {
+      isVideoPlaying = true;
+      initialVideo.play().finally(() => {
+        if (initialVideo.ended) {
+          isVideoPlaying = false;
+          startAutoPlay();
         }
-        
-        indicator.addEventListener('click', () => {
-            goToSlide(index);
-            resetInterval();
-        });
-        
-        indicatorsContainer.appendChild(indicator);
-    });
-    
-    const indicators = document.querySelectorAll('.carousel-indicator');
-    
-    function goToSlide(index) {
-        slides[currentSlide].classList.remove('active');
-        indicators[currentSlide].classList.remove('active');
-        
-        currentSlide = index;
-        
-        if (currentSlide < 0) {
-            currentSlide = slides.length - 1;
-        } else if (currentSlide >= slides.length) {
-            currentSlide = 0;
-        }
-        
-        slides[currentSlide].classList.add('active');
-        indicators[currentSlide].classList.add('active');
+      });
     }
-    
-    function nextSlide() {
-        goToSlide(currentSlide + 1);
-    }
-    
-    function prevSlide() {
-        goToSlide(currentSlide - 1);
-    }
-    
-    nextBtn.addEventListener('click', () => {
-        nextSlide();
-        resetInterval();
-    });
-    
-    prevBtn.addEventListener('click', () => {
-        prevSlide();
-        resetInterval();
-    });
-    
-    function startSlideInterval() {
-        slideInterval = setInterval(nextSlide, intervalTime);
-    }
-    
-    function resetInterval() {
-        clearInterval(slideInterval);
-        startSlideInterval();
-    }
-    
-    startSlideInterval();
-    
-    carousel.addEventListener('mouseenter', () => {
-        clearInterval(slideInterval);
-    });
-    
-    carousel.addEventListener('mouseleave', startSlideInterval);
-    
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            prevSlide();
-            resetInterval();
-        } else if (e.key === 'ArrowRight') {
-            nextSlide();
-            resetInterval();
-        }
-    });
-    
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    carousel.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        clearInterval(slideInterval);
-    });
-    
-    carousel.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-        startSlideInterval();
-    });
-    
-    function handleSwipe() {
-        const swipeThreshold = 50; 
-        const swipeDistance = touchEndX - touchStartX;
-        
-        if (swipeDistance > swipeThreshold) {
-            prevSlide();
-        } else if (swipeDistance < -swipeThreshold) {
-            nextSlide();
-        }
-    }
-}
+  });
