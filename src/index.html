@@ -5,23 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KIEPL Website</title>
     <link rel="stylesheet" href="styles/index.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script/slideSection.js" defer></script>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="script/searchBar.js" defer></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="script/index.js"></script>
-</head >
+</head>
 <body>
     <main class="main">
+        <video muted loop autoplay>
+            <source src="vid1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
         <header class="header">
             <div class="header-logo-container">
-              <img class="logo" title="KIEPL.in" src="logo/logo.jpg"/>
-              <marquee behavior="scroll" direction="left" scrollamount="5">
-                  PROJECT & Mech. MAINTENANCE
-              </marquee>
+                <img class="logo" title="KIEPL.in" src="logo.jpg"/>
+                <marquee behavior="scroll" direction="left" scrollamount="5">
+                    PROJECT & Mech. MAINTENANCE
+                </marquee>
             </div>
-
+    
             <div class="side-bar">
                 <div class="menu">
                     <div onclick="offSidebar()" class="item">
@@ -31,13 +37,10 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="item">
-                        <label for="text" class="search-label">
-                            <input type="search" id="text" />
-                            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
-                                <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
-                            </svg>
-                        </label>
+                    <div class="search-container">
+                        <input type="search" id="sidebar-search" placeholder="Search...">
+                        <button id="sidebar-search-button">Search</button>
+                        <div id="sidebar-search-results" class="search-results"></div>
                     </div>
                     <div class="item"><a href="#">Home</a></div>
                     <div class="item">
@@ -115,7 +118,6 @@
                         <a href="HIL (Smelter) Purchase.html">HIL (Smelter)</a>
                     </div>
                 </li>
-                <li><a href="#" id="hide">PORTAL</a></li>
                 <li><a href="contactus.html" id="hide">CONTACT</a></li>
                 <li onclick="showSidebar()" class="hideMenuButton">
                     <a href="#">
@@ -124,21 +126,18 @@
                         </svg>
                     </a>
                 </li>
-                <li>
-                    <label for="text" class="search-label-1">
-                        <input type="search" id="text" />
-                        <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
-                            <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
-                        </svg>
-                    </label>
+                <li class="search-container">
+                    <input type="search" id="main-search" placeholder="Search...">
+                    <button id="main-search-button">Search</button>
+                    <div id="search-results" class="search-results"></div>
                 </li>
             </ul>
         </header>
 
         <section class="content">
             <div class="left-side">
-                <h2>Kamaleswar <br><span>India Engineering</span> </br>Private Limited</h2>
-                <p class="par">"KIEPL" is an Indian company specializing in mechanical and engineering<br> infrastructure services. It focuses on the development and installation of<br> machinery, industrial projects, and plant maintenance (AMC) in the steel<br> and aluminum sectors. Additionally, KIEPL is involved in infrastructure and <br>civil construction projects, delivering comprehensive solutions across various <br>industries.</p>
+                <h2>Kamaleswar <br><span>India Engineering</span> <br>Private Limited</h2>
+                <p class="par">"KIEPL" is an Indian company specializing in mechanical and engineering infrastructure services. It focuses on the development and installation of machinery, industrial projects, and plant maintenance (AMC) in the steel and aluminum sectors. Additionally, KIEPL is involved in infrastructure and civil construction projects, delivering comprehensive solutions across various industries.</p>
                 <a href="readmore.html">
                     <button class="cn">Read More..</button>
                 </a>
@@ -155,32 +154,39 @@
       <div class="carousel-container">
           <div class="carousel">
               <div class="carousel-slide active">
-                  <img src="images/Fabrication and Installation of Cross Over busbar Jumper.jpg" alt="KIEPL Project 1" />
+                  <img src="Fabrication and Installation of Cross Over busbar Jumper.jpg" alt="KIEPL Project 1">
                   <div class="slide-caption">
                       <h2>Engineering Excellence</h2>
                       <p>Fabrication and Installation of Cross Over busbar Jumper</p>
                   </div>
               </div>
               <div class="carousel-slide">
-                  <img src="images/ERECTION .jpg" alt="KIEPL Project 2" />
+                  <img src="ERECTION .jpg" alt="KIEPL Project 2">
                   <div class="slide-caption">
                       <h2>Industrial Solutions</h2>
                       <p>ERECTION</p>
                   </div>
               </div>
               <div class="carousel-slide">
-                  <img src="images/Monthly Theme Celebration.jpg" alt="KIEPL Project 3" />
+                  <img src="Monthly Theme Celebration.jpg" alt="KIEPL Project 3">
                   <div class="slide-caption">
                       <h2>Innovative Infrastructure</h2>
                       <p>Monthly Theme Celebration</p>
                   </div>
               </div>
               <div class="carousel-slide">
-                  <img src="images/PHOTO_SAFETY 15.jpg" alt="KIEPL Project 4" />
+                  <img src="PHOTO_SAFETY 15.jpg" alt="KIEPL Project 4">
                   <div class="slide-caption">
                       <h2>Text to add</h2>
                       <p>Text to add</p>
                   </div>
+              </div>
+              <div class="carousel-slide">
+                <video src="video_demo.mp4" muted></video>
+                <div class="slide-caption">
+                  <h2>Video Showcase</h2>
+                  <p>Watch our latest project in action</p>
+                </div>
               </div>
           </div>
           
@@ -205,7 +211,7 @@
         <div class="left-section">
             <h2 class="section__header">
                 About us 
-                <img src="logo/logo.jpg" alt="about" />
+                <img src="logo.jpg" alt="about" />
             </h2>
             <p class="section__subheader">
                 "Kamaleswar India Engineering Private Limited (KIEPL)" (Present)
@@ -236,7 +242,7 @@
             </a>
         </div>
         <div class="about__image">
-            <img src="logo/logo.jpg" alt="about" />
+            <img src="logo.jpg" alt="about" />
         </div>
     </section>
 
@@ -246,24 +252,24 @@
         <div class="discover__grid">
             <div class="discover__card">
                 <div class="discover__image">
-                    <img src="images/managing director.jpg" alt="discover" />
+                    <img src="managing director.jpg" alt="discover" />
                 </div>
                 <div class="discover_card_content">
                     <h4>Akshay Sahu</h4>
                     <p>CEO and Managing Director</p>
-                    <a href="readmore.html">
+                    <a href="LeaderReadme.html">
                         <button class="btn">Read More..</button>
                     </a>
                 </div>
             </div>
             <div class="discover__card">
                 <div class="discover__image">
-                    <img src="images/director.jpg" alt="discover" />
+                    <img src="director.jpg" alt="discover" />
                 </div>
                 <div class="discover_card_content">
                     <h4>Dillip Majhee</h4>
                     <p>Director</p>
-                    <a href="readmore.html">
+                    <a href="LeaderReadme.html">
                         <button class="btn">Read More..</button>
                     </a>
                 </div>
@@ -334,6 +340,6 @@
           </div>
       </div>
     </section>
-    
+
 </body>
 </html>
