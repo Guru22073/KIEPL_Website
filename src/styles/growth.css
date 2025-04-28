@@ -25,6 +25,7 @@ nav {
 .logo {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo img {
@@ -35,20 +36,6 @@ nav {
 .logo-text {
   display: flex;
   flex-direction: column;
-}
-
-.auth-buttons button {
-  margin-left: 10px;
-  padding: 10px 15px;
-  background-color: #2196f3;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.auth-buttons button:hover {
-  background-color: #1976d2;
 }
 
 .dashboard {
@@ -69,22 +56,19 @@ h1 {
 }
 
 .stats-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   background-color: #555;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .stat {
   text-align: center;
   color: #fff;
-  margin: 10px;
-  flex: 1 1 200px;
-  max-width: 250px;
 }
 
 .stat .icon {
@@ -106,10 +90,10 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  gap: 10px;
 }
 
-.chart-container,
-.task-list-container {
+.chart-container{
   background-color: #444;
   padding: 20px;
   border-radius: 10px;
@@ -123,25 +107,11 @@ h1 {
   min-width: 300px;
 }
 
-.chart-container h1 {
+.chart-container h1{
   color: white;
 }
 
-.task-list-container {
-  flex: 1 1 58%;
-  color: #eee;
-  max-height: 560px;
-  overflow-y: auto;
-  box-sizing: border-box;
-  min-width: 290px;
-  margin-left: 10px;
-}
-
-.task-list-container h1 {
-  color: white;
-}
-
-#projectStatusChart {
+#projectStatusChart{
   max-width: 100%;
   max-height: 400px;
   margin: auto;
@@ -158,7 +128,7 @@ h1 {
 .status-label {
   display: flex;
   align-items: center;
-  margin: 0 20px;
+  margin: 10px 20px;
 }
 
 .color-box {
@@ -174,32 +144,10 @@ h1 {
   font-size: 1.2em;
 }
 
-.task-list h1 {
-  margin: 0 0 10px 0;
-  font-size: 24px;
-}
-
 .summary {
   margin-bottom: 20px;
   font-size: 16px;
   color: #aaa;
-}
-
-.task {
-  margin-bottom: 20px;
-}
-
-.task-details {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: #555;
-  padding: 15px;
-  border-radius: 5px;
-}
-
-.task-name {
-  font-weight: bold;
 }
 
 .due-date,
@@ -228,16 +176,42 @@ h1 {
   background-color: #32cd32;
 }
 
-@media (min-width: 600px) {
-  .task-details {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.filter-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-buttons button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.filter-buttons button:hover {
+  background-color: #777;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
   }
 
-  .task-name {
-    flex: 2;
+  .chart-container{
+    flex: 1 1 100%;
+    margin-bottom: 20px;
   }
+
+}
+
+@media (min-width: 769px) {
 
   .due-date,
   .status,
@@ -248,54 +222,24 @@ h1 {
   }
 }
 
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column;
+@media (max-width: 480px) {
+  .logo img {
+    height: 30px;
   }
 
-  .chart-container,
-  .task-list-container {
-    flex: 1 1 100%;
-    margin-bottom: 20px;
+  .logo-text {
+    font-size: 0.8em;
   }
 
-  .task-details {
-    flex-direction: column;
-    align-items: flex-start;
+  .stat .number {
+    font-size: 1.2em;
   }
 
-  .task-name,
-  .due-date,
-  .status,
-  .assigned,
-  .time-spent {
-    text-align: left;
+  .stat .label {
+    font-size: 0.9em;
   }
-}
 
-#tasksOverviewChart {
-  max-width: 800px;
-  max-height: 400px;
-  margin: auto;
-}
-
-.filter-buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.filter-buttons button {
-  background-color: #555;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 5px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.filter-buttons button:hover {
-  background-color: #777;
+  .filter-buttons button {
+    padding: 8px 15px;
+  }
 }
