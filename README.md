@@ -6,12 +6,12 @@
 A responsive, modern website for Kamaleswar India Engineering Private Limited (KIEPL), an Indian company specializing in mechanical and engineering infrastructure services, focusing on development and installation of machinery, industrial projects, and plant maintenance in the steel and aluminum sectors.
 
 ## 📋 Table of Contents
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Technology Stack](#technology-stack)
-- [Installation & Setup](#installation--setup)
-- [Usage](#usage)
-- [Contact](#contact)
+- [Features](#-features)
+- [Technology Stack](#️-technology-stack)
+- [Installation & Setup](#-installation--setup)
+- [Usage](#-usage)
+- [Contributing](#-contributing)
+- [Contact](#-contact)
 
 ## ✨ Features
 
