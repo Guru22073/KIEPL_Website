@@ -5,20 +5,12 @@
 
 A responsive, modern website for Kamaleswar India Engineering Private Limited (KIEPL), an Indian company specializing in mechanical and engineering infrastructure services, focusing on development and installation of machinery, industrial projects, and plant maintenance in the steel and aluminum sectors.
 
-<!-- https://github.com/Guru22073/KIEPL_Website/images/video_demo.mp4 -->
-
-*Click on the video link above to view a demonstration of the KIEPL website in action*
-
-> Note: If you're viewing this on GitHub and the video doesn't appear, you can add your video to the repository's assets folder and update this link, or upload it to a video hosting service like YouTube and embed it here.
-
 ## 📋 Table of Contents
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Technology Stack](#technology-stack)
 - [Installation & Setup](#installation--setup)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## ✨ Features
