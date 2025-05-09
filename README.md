@@ -86,6 +86,8 @@ Please ensure your code follows the existing style and includes appropriate comm
 For any questions or suggestions regarding this project, please reach out through:
 
 - GitHub: [@Guru22073](https://github.com/Guru22073)
+- Mail: [guru242004@gmail.com](guru242004@gmail.com)
+
 ---
 
 © 2021-2025 KIEPL. All Rights Reserved.
