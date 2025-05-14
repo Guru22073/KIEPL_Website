@@ -3,6 +3,7 @@
 [![Website Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/Guru22073/KIEPL_Website)
 [![GitHub License](https://img.shields.io/github/license/Guru22073/KIEPL_Website)](https://github.com/Guru22073/KIEPL_Website/blob/main/LICENSE)
 
+- **WEBSITE(online hosted)**
 [KIEPL.co](https://kiepl.co/)
 
 A responsive, modern website for Kamaleswar India Engineering Private Limited (KIEPL), an Indian company specializing in mechanical and engineering infrastructure services, focusing on development and installation of machinery, industrial projects, and plant maintenance in the steel and aluminum sectors.
