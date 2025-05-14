@@ -40,6 +40,22 @@ ScrollReveal().reveal(".about button", {
   ...scrollRevealOption,
   delay: 1500,
 });
+ScrollReveal().reveal(".certifications-section", {
+  ...scrollRevealOption,
+  delay: 1200,
+});
+ScrollReveal().reveal(".certifications__header", {
+  ...scrollRevealOption,
+  delay: 1400,
+});
+ScrollReveal().reveal(".certifications__subheader", {
+  ...scrollRevealOption,
+  delay: 1600,
+});
+ScrollReveal().reveal(".certifications__container", {
+  ...scrollRevealOption,
+  delay: 1800,
+});
 
 function showSidebar() {
   const sidebar = document.querySelector(".side-bar");
